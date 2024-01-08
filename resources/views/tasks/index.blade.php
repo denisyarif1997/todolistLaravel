@@ -4,6 +4,18 @@
     <title>Todo List - Tugas Ku</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Atau sesuaikan dengan versi yang diinginkan dari Bootstrap -->
+    <style>
+        /* Menambahkan efek 3D pada tombol */
+        .btn-3d {
+            border: none;
+            box-shadow: 0px 4px 0px #cccccc;
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-3d:hover {
+            transform: translateY(2px);
+            box-shadow: 0px 2px 0px #cccccc;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -15,7 +27,7 @@
             <div class="input-group">
                 <input type="text" name="name" class="form-control" placeholder="Buat Tugas Baru" required>
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary">Buat Tugas</button>
+                    <button type="submit" class="btn btn-primary btn-3d">Buat Tugas</button>
                 </div>
             </div>
         </form>
@@ -36,7 +48,7 @@
                     <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                        <button type="submit" class="btn btn-danger btn-sm btn-3d">Hapus</button>
                     </form>
                 </li>
             @endforeach
